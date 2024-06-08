@@ -1,1 +1,1 @@
-Estoy iniciando el projecto angular que será el frontend de mi aplicación
+Este proyecto será el que controlará la banda transportadora
