@@ -1,0 +1,1 @@
+Estoy iniciando el projecto angular que será el frontend de mi aplicación
