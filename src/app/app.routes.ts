@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core';
 import { AuthGuard } from './auth/auth.guard';
 import { LoginLayoutComponent } from './layouts/login-layout/login-layout.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { DevicesComponent } from './views/devices/devices.component';
 
 export const routes: Routes = [
     {
@@ -23,6 +24,7 @@ export const routes: Routes = [
         children: [
           { path: 'who_we_are', component: WhoWeAreComponent },
           { path: 'charts', component: ChartsComponent },
+          { path: 'devices', component: DevicesComponent },
         ]
       },
       { path: '**', redirectTo: '' },
