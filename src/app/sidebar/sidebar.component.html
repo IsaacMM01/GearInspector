@@ -2,11 +2,7 @@
     type="button"
     class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
     <span class="sr-only">Open sidebar</span>
-    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-        <path clip-rule="evenodd" fill-rule="evenodd"
-            d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
-        </path>
-    </svg>
+    <ng-icon size="30" name="featherMenu"></ng-icon>
 </button>
 
 <aside id="default-sidebar"
@@ -30,9 +26,19 @@
         <div class="m-4">
             <ul class="space-y-2 font-medium">
                 <li>
-                    <a routerLink="/who_we_are" data-drawer-target="default-sidebar"
+                    <a routerLink="/who_we_are"
+                        data-drawer-target="default-sidebar"
                         data-drawer-toggle="default-sidebar" aria-controls="default-sidebar"
-                        class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] w-full flex items-center gap-4 px-4 capitalize">
+                        class="sm:hidden middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] w-full flex items-center gap-4 px-4 capitalize">
+                        <ng-icon size="25" name="heroIdentification"></ng-icon>
+                        <p
+                            class="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
+                            ¿Quienes somos?</p>
+                    </a>
+                    <a routerLink="/who_we_are"
+                        data-drawer-target="default-sidebar"
+                        aria-controls="default-sidebar"
+                        class="hidden middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] w-full sm:flex items-center gap-4 px-4 capitalize">
                         <ng-icon size="25" name="heroIdentification"></ng-icon>
                         <p
                             class="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
@@ -40,13 +46,47 @@
                     </a>
                 </li>
                 <li>
-                    <a routerLink="/charts" data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar"
+                    <a routerLink="/charts" 
+                        data-drawer-target="default-sidebar" 
+                        data-drawer-toggle="default-sidebar"
                         aria-controls="default-sidebar"
-                        class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] w-full flex items-center gap-4 px-4 capitalize">
+                        class="sm:hidden middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] w-full flex items-center gap-4 px-4 capitalize">
                         <ng-icon size="25" name="heroChartBar"></ng-icon>
                         <p
                             class="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
                             Graficas</p>
+                    </a>
+                    <a routerLink="/charts" 
+                        data-drawer-target="default-sidebar"
+                        aria-controls="default-sidebar"
+                        class="hidden middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] w-full sm:flex items-center gap-4 px-4 capitalize">
+                        <ng-icon size="25" name="heroChartBar"></ng-icon>
+                        <p
+                            class="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
+                            Graficas</p>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/devices" 
+                        data-drawer-target="default-sidebar" 
+                        data-drawer-toggle="default-sidebar"
+                        aria-controls="default-sidebar"
+                        class="sm:hidden middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] w-full flex items-center gap-4 px-4 capitalize">
+                        <ng-icon size="25" name="heroChartBar"></ng-icon>
+                        <p
+                            class="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
+                            Dispositivos</p>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/devices" 
+                        data-drawer-target="default-sidebar"
+                        aria-controls="default-sidebar"
+                        class="hidden middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] w-full sm:flex items-center gap-4 px-4 capitalize">
+                        <ng-icon size="25" name="heroChartBar"></ng-icon>
+                        <p
+                            class="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
+                            Dispositivos</p>
                     </a>
                 </li>
             </ul>
@@ -58,7 +98,7 @@
                 </li>
                 <li>
                     <button
-                        class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
+                        class=" sm:hidden middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                         type="button"
                         data-drawer-target="default-sidebar" 
                         data-drawer-toggle="default-sidebar"
@@ -69,6 +109,17 @@
                             class="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
                             sign out</p>
                     </button>
+                    <button
+                    class="hidden middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full sm:flex items-center gap-4 px-4 capitalize"
+                    type="button"
+                    data-drawer-target="default-sidebar"
+                    aria-controls="default-sidebar"
+                    (click)="onLogOut()">
+                    <ng-icon name="featherLogOut"></ng-icon>
+                    <p
+                        class="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
+                        sign out</p>
+                </button>
                 </li>
             </ul>
         </div>

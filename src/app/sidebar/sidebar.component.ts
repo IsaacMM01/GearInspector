@@ -3,7 +3,7 @@ import { initFlowbite } from 'flowbite';
 
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { heroUser, heroIdentification, heroChartBar } from '@ng-icons/heroicons/outline';
-import { featherLogOut } from '@ng-icons/feather-icons'
+import { featherLogOut, featherMenu } from '@ng-icons/feather-icons'
 import { RouterLink } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
@@ -11,7 +11,7 @@ import { AuthService } from '../services/auth.service';
   selector: 'app-sidebar',
   standalone: true,
   imports: [NgIconComponent, RouterLink],
-  viewProviders:[provideIcons({ heroUser, heroIdentification, heroChartBar, featherLogOut })],
+  viewProviders:[provideIcons({ heroUser, heroIdentification, heroChartBar, featherLogOut, featherMenu })],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })
