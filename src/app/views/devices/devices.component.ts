@@ -4,6 +4,7 @@ import { featherVideo } from '@ng-icons/feather-icons'
 import { MediaDevicesService } from '../../services/media-devices.service';
 import { videoDeviceInterface } from '../../interfaces/videoDevice.interface';
 import { isEmptyValue } from '../../global/functions';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-devices',
@@ -16,11 +17,17 @@ import { isEmptyValue } from '../../global/functions';
 export class DevicesComponent {
   @ViewChildren('devices') videoElements!: QueryList<ElementRef>;
 
-  constructor(private mediaDevicesService: MediaDevicesService) {}
+  constructor(
+    private mediaDevicesService: MediaDevicesService,
+    private apiService: ApiService
+  ) {}
 
   isDisabledButton: boolean = false;
   availableDevices: videoDeviceInterface[] = [];
   connectedDevices: videoDeviceInterface[] = [];
+
+  selectedFile: string | ArrayBuffer | null = null;
+  result: string = '';
 
 
   async listVideoDevices() {
@@ -65,6 +72,40 @@ export class DevicesComponent {
     this.availableDevices.push({
       id: availableDevice!.deviceId,
       name: availableDevice!.label,
+    })
+  }
+
+  onFileSelected(event: any): void {
+    let file = event.target.files[0];
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      this.selectedFile = reader.result;
+    };
+    reader.onerror = function (error) {
+      console.log('Error: ', error);
+    };
+  }
+
+  onUpload(event: any){
+    const formData = new FormData();
+    if(!this.selectedFile)return;
+    formData.append('image', this.selectedFile.toString())
+    this.apiService.uploadImage(formData).subscribe(data=>{
+      console.log(data);
+    });
+  }
+
+  ngOnDestroy(): void {
+    if(isEmptyValue(this.connectedDevices)) return;
+    this.connectedDevices.forEach((_, index)=>{
+      console.log(index);
+      this.disconnectDevice(index);
+    })
+    if(isEmptyValue(this.connectedDevices)) return;
+    this.connectedDevices.forEach((_, index)=>{
+      console.log(index);
+      this.disconnectDevice(index);
     })
   }
 }

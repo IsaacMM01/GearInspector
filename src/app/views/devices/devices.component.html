@@ -1,5 +1,7 @@
 <div>
     <div id="list devices" class="my-4">
+        <input type="file" (change)="onFileSelected($event)" />
+        <button (click)="onUpload($event)">Upload</button>
         @if(availableDevices.length > 0){
             <h3 class="font-semibold text-xl text-center w-full my-2 border-b border-black">
                 Dispositivos disponibles
